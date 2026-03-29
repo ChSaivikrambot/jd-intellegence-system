@@ -1,0 +1,317 @@
+<style>
+  .wrap{padding:1rem 0}
+  .phase{border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);margin-bottom:.9rem;overflow:hidden}
+  .ph{padding:9px 16px;font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase}
+  .pb{padding:11px 16px}
+  .step{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
+  .sn{font-size:11px;font-weight:500;min-width:18px;margin-top:2px}
+  .st{font-size:13px;color:var(--color-text-primary);line-height:1.5}
+  .ss{font-size:11px;color:var(--color-text-secondary);margin-top:2px;line-height:1.5}
+  .tag{display:inline-block;font-size:10px;padding:1px 7px;border-radius:99px;margin-left:6px;vertical-align:middle}
+  .tp{background:#EEEDFE;color:#3C3489}
+  .tt{background:#E1F5EE;color:#0F6E56}
+  .tc{background:#FAECE7;color:#993C1D}
+  .tg{background:#EAF3DE;color:#3B6D11}
+  .ta{background:#FAEEDA;color:#633806}
+  .tb{background:#E6F1FB;color:#0C447C}
+  .tgr{background:#F1EFE8;color:#444441}
+  .dec{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:9px 12px;margin:6px 0}
+  .dl{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:5px}
+  .dr{display:flex;gap:8px;flex-wrap:wrap}
+  .dy{font-size:11px;padding:3px 10px;border-radius:99px;background:#E1F5EE;color:#0F6E56}
+  .dn{font-size:11px;padding:3px 10px;border-radius:99px;background:#FCEBEB;color:#791F1F}
+  .ds{font-size:11px;color:var(--color-text-secondary);margin-top:5px}
+  .dvd{height:.5px;background:var(--color-border-tertiary);margin:7px 0}
+  .arr{text-align:center;font-size:15px;color:var(--color-text-tertiary);margin:2px 0}
+  .cb{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:9px 12px;font-family:var(--font-mono);font-size:11px;color:var(--color-text-secondary);margin-top:6px;line-height:1.9}
+  .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}
+  .sc{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 6px;text-align:center}
+  .sv{font-size:19px;font-weight:500;color:var(--color-text-primary)}
+  .sl{font-size:10px;color:var(--color-text-secondary);margin-top:2px}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+</style>
+
+<div class="wrap">
+
+  <!-- INPUT -->
+  <div class="phase">
+    <div class="ph" style="background:#F1EFE8;color:#5F5E5A">Phase 0 — input</div>
+    <div class="pb">
+      <div class="step">
+        <div class="sn" style="color:#888780">01</div>
+        <div>
+          <div class="st">Two input modes via <code>POST /analyze</code><span class="tag tp">FastAPI</span></div>
+          <div class="ss">mode A: paste raw JD text · mode B: upload PDF file</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn" style="color:#888780">02</div>
+        <div>
+          <div class="st">User profile sent alongside JD<span class="tag tgr">one-time setup</span></div>
+          <div class="ss">mode A/B: skills entered manually · stored in session or sent per request</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn" style="color:#888780">03</div>
+        <div>
+          <div class="st">Mode C (optional): upload resume PDF<span class="tag tp">FastAPI</span></div>
+          <div class="ss">via <code>POST /analyze-with-resume</code> · extract skills from resume using Extractor Agent (LLM call 3) · feed into Phase 3 user profile</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn" style="color:#888780">04</div>
+        <div>
+          <div class="st">Input validation + cleaning<span class="tag tt">core</span></div>
+          <div class="ss">if PDF → PyMuPDF extract · if token count over 6000 → reject · strip HTML tags, extra whitespace</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arr">↓</div>
+
+  <!-- EXTRACTION -->
+  <div class="phase">
+    <div class="ph" style="background:#EEEDFE;color:#3C3489">Phase 1 — extraction · LLM call 1</div>
+    <div class="pb">
+      <div class="step">
+        <div class="sn" style="color:#534AB7">05</div>
+        <div>
+          <div class="st">Send clean JD text to Groq — Extractor Agent<span class="tag tc">Agent 1</span></div>
+          <div class="ss">model: llama-3.3-70b · strict prompt: return ONLY valid JSON matching exact schema</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn" style="color:#534AB7">06</div>
+        <div>
+          <div class="st">Extractor returns domain-specific JSON</div>
+          <div class="ss">company · role · truly_entry_level · required_skills · preferred_skills · experience_required · red_flags · compensation · work_mode</div>
+        </div>
+      </div>
+      <div class="dvd"></div>
+      <div class="dec">
+        <div class="dl">Pydantic v2 schema validation</div>
+        <div class="dr">
+          <span class="dy">pass → Verifier</span>
+          <span class="dn">fail → retry with stricter prompt (max 2x)</span>
+        </div>
+        <div class="ds">fail after 2 retries → return confidence: failed immediately</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arr">↓</div>
+
+  <!-- VERIFICATION -->
+  <div class="phase">
+    <div class="ph" style="background:#FAECE7;color:#993C1D">Phase 2 — verification · LLM call 2</div>
+    <div class="pb">
+      <div class="step">
+        <div class="sn" style="color:#D85A30">07</div>
+        <div>
+          <div class="st">Send original JD + extracted JSON to Verifier Agent<span class="tag tc">Agent 2</span></div>
+          <div class="ss">prompt: "for every extracted claim, find exact evidence in original JD text"</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn" style="color:#D85A30">08</div>
+        <div>
+          <div class="st">Verifier returns evidence map per field</div>
+          <div class="ss">"2 years experience" → found: "candidates must have 2+ years..." → verified ✓</div>
+        </div>
+      </div>
+      <div class="dvd"></div>
+      <div class="dec">
+        <div class="dl">All claims verified against source?</div>
+        <div class="dr">
+          <span class="dy">yes → confidence scoring</span>
+          <span class="dn">no → smart retry Extractor with feedback</span>
+        </div>
+        <div class="ds">smart retry passes failed fields back: "fix only these specific fields: [...]" · max 2 retries total across both validation types</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arr">↓</div>
+
+  <!-- SKILL GAP -->
+  <div class="phase">
+    <div class="ph" style="background:#E1F5EE;color:#0F6E56">Phase 3 — skill gap analysis · your code, zero LLM</div>
+    <div class="pb">
+      <div class="step">
+        <div class="sn" style="color:#1D9E75">09</div>
+        <div>
+          <div class="st">Compare extracted required_skills vs user profile<span class="tag tg">deterministic</span></div>
+          <div class="ss">pure Python set comparison — no LLM call needed</div>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="cb">
+          JD requires:<br>
+          Python &nbsp;&nbsp;&nbsp;✅ you have<br>
+          Docker &nbsp;&nbsp;&nbsp;✅ you have<br>
+          Kubernetes ❌ gap<br>
+          AWS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;❌ gap
+        </div>
+        <div class="cb">
+          match_score: 72%<br>
+          matched: 2 of 4<br>
+          gaps: ["Kubernetes",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"AWS"]<br>
+          preferred_gaps: [...]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arr">↓</div>
+
+  <!-- CONFIDENCE + RECOMMENDATION -->
+  <div class="phase">
+    <div class="ph" style="background:#EAF3DE;color:#3B6D11">Phase 4 — confidence + recommendation · your code, zero LLM</div>
+    <div class="pb">
+      <div class="step">
+        <div class="sn" style="color:#639922">10</div>
+        <div>
+          <div class="st">Confidence assigned by your logic<span class="tag tg">deterministic</span></div>
+          <div class="ss">verified + 0 retries → high · verified + 1 → medium · verified + 2 → low · not verified → failed</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn" style="color:#639922">11</div>
+        <div>
+          <div class="st">Apply recommendation assigned by your logic<span class="tag tg">deterministic</span></div>
+          <div class="ss">no extra LLM call — pure if/else based on red_flags + match_score + truly_entry_level</div>
+        </div>
+      </div>
+      <div class="cb">
+        red_flags empty + match ≥ 80% + entry_level true &nbsp;→ "apply_now"<br>
+        red_flags exist &nbsp;+ match ≥ 60% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ "apply_with_caution"<br>
+        match &lt; 60% &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ "upskill_first"<br>
+        not_entry_level + red_flags &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ "high_risk"
+      </div>
+    </div>
+  </div>
+
+  <div class="arr">↓</div>
+
+  <!-- RESPONSE -->
+  <div class="phase">
+    <div class="ph" style="background:#E6F1FB;color:#0C447C">Phase 5 — final response · always valid, never crashes</div>
+    <div class="pb">
+      <div class="step">
+        <div class="sn" style="color:#185FA5">12</div>
+        <div>
+          <div class="st">Return complete structured JSON<span class="tag tb">Pydantic guaranteed</span></div>
+          <div class="ss">every field validated · every claim source-verified · recommendation deterministic</div>
+        </div>
+      </div>
+      <div class="cb">
+        {<br>
+        &nbsp;&nbsp;"company": "TechCorp",<br>
+        &nbsp;&nbsp;"role": "Software Engineer Intern",<br>
+        &nbsp;&nbsp;"truly_entry_level": false,<br>
+        &nbsp;&nbsp;"required_skills": ["Python", "FastAPI", "Docker", "Kubernetes"],<br>
+        &nbsp;&nbsp;"red_flags": ["2 yrs exp for intern", "no salary mentioned"],<br>
+        &nbsp;&nbsp;"compensation": "not mentioned",<br>
+        &nbsp;&nbsp;"work_mode": "hybrid",<br>
+        &nbsp;&nbsp;"match_score": 72,<br>
+        &nbsp;&nbsp;"skill_gaps": ["Kubernetes", "AWS"],<br>
+        &nbsp;&nbsp;"recommendation": "apply_with_caution",<br>
+        &nbsp;&nbsp;"confidence": "high",<br>
+        &nbsp;&nbsp;"retries_used": 0<br>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="arr">↓</div>
+
+  <!-- FRONTEND -->
+  <div class="phase">
+    <div class="ph" style="background:#FBEAF0;color:#72243E">Phase 6 — frontend · single HTML file</div>
+    <div class="pb">
+      <div class="step">
+        <div class="sn" style="color:#D4537E">13</div>
+        <div>
+          <div class="st">Simple visual dashboard — no React needed</div>
+          <div class="ss">paste JD text · enter your skills once (or upload resume) · click analyze</div>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="cb">
+          ✅ Python (matched)<br>
+          ✅ FastAPI (matched)<br>
+          ❌ Kubernetes (gap)<br>
+          ❌ AWS (gap)
+        </div>
+        <div class="cb">
+          ⚠️ 2 yrs exp for intern<br>
+          ⚠️ No salary mentioned<br>
+          ─────────────────<br>
+          → apply_with_caution
+        </div>
+      </div>
+      <div class="ss" style="margin-top:8px">confidence badge · match score · skill gaps · recommendation — all visible at a glance</div>
+    </div>
+  </div>
+
+  <div class="arr">↓</div>
+
+  <!-- MLOPS -->
+  <div class="phase">
+    <div class="ph" style="background:#FAEEDA;color:#633806">Phase 7 — MLOps + deployment · Phase 2 build</div>
+    <div class="pb">
+      <div class="step">
+        <div class="sn" style="color:#BA7517">14</div>
+        <div>
+          <div class="st">Eval dataset — 30 to 50 real JDs with ground truth<span class="tag ta">dataset</span></div>
+          <div class="ss">collect from LinkedIn, Naukri, Internshala · AI-assisted ground truth generation · manually verify 20%</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn" style="color:#BA7517">15</div>
+        <div>
+          <div class="st">DeepEval scores every output<span class="tag ta">MLOps</span></div>
+          <div class="ss">correctness · relevancy · hallucination rate per field</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn" style="color:#BA7517">16</div>
+        <div>
+          <div class="st">GitHub Actions on every push<span class="tag ta">CI/CD</span></div>
+          <div class="ss">hallucination over 15% → blocks merge · score drops → blocks deploy</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="sn" style="color:#BA7517">17</div>
+        <div>
+          <div class="st">Docker + Railway — live URL always on<span class="tag ta">deployed</span></div>
+          <div class="ss">demo live using interviewer's own company JD in the interview room</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL SUMMARY -->
+  <div style="border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);padding:14px 16px;">
+    <div style="font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:10px">complete system summary</div>
+    <div class="sgrid">
+      <div class="sc"><div class="sv">2</div><div class="sl">LLM calls normal</div></div>
+      <div class="sc"><div class="sv">6</div><div class="sl">LLM calls max</div></div>
+      <div class="sc"><div class="sv">0</div><div class="sl">LLM for decisions</div></div>
+      <div class="sc"><div class="sv">1</div><div class="sl">HTML frontend</div></div>
+    </div>
+    <div style="margin-top:12px;font-size:11px;color:var(--color-text-secondary);line-height:2">
+      <b style="color:var(--color-text-primary)">agents:</b> LangGraph · Extractor + Verifier &nbsp;|&nbsp;
+      <b style="color:var(--color-text-primary)">validation:</b> Pydantic v2 &nbsp;|&nbsp;
+      <b style="color:var(--color-text-primary)">inference:</b> Groq llama-3.3-70b<br>
+      <b style="color:var(--color-text-primary)">skill gap:</b> pure Python · zero LLM &nbsp;|&nbsp;
+      <b style="color:var(--color-text-primary)">recommendation:</b> deterministic if/else · zero LLM<br>
+      <b style="color:var(--color-text-primary)">eval:</b> DeepEval + GitHub Actions &nbsp;|&nbsp;
+      <b style="color:var(--color-text-primary)">deploy:</b> Docker + Railway
+    </div>
+  </div>
+
+</div>
+
