@@ -54,6 +54,7 @@ Return JSON array:
 ]
 """.strip()
 
+
 def run_verifier(jd_text: str, extracted: dict, request_id: str) -> List[FieldVerification]:
     api_key = os.getenv("GROQ_API_KEY", "").strip()
     model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile").strip()
@@ -73,3 +74,43 @@ def run_verifier(jd_text: str, extracted: dict, request_id: str) -> List[FieldVe
 
     return [FieldVerification.model_validate(item) for item in parsed]
 
+
+def build_correction_prompt(jd_text: str, current_payload: str, failed_fields: List[str]) -> str:
+    return f"""
+You are correcting specific fields in a structured extraction.
+
+Rules:
+- Only return the requested fields
+- Do NOT include other fields
+- Use only information from the JD
+- If not present, return null
+
+Fields to correct:{failed_fields}
+
+JD:{jd_text}
+
+Current extracted data:{current_payload}
+
+Return STRICT JSON:
+{{
+  "field_name": value
+}}
+""".strip()
+
+
+def run_correction(jd_text: str, extracted: dict, failed_fields: List[str], request_id: str) -> dict:
+    api_key = os.getenv("GROQ_API_KEY", "").strip()
+    model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile").strip()
+    
+    prompt = build_correction_prompt(jd_text, json.dumps(extracted, ensure_ascii=True), failed_fields)
+    raw = call_groq_text(GroqSettings(api_key=api_key, model=model), prompt, timeout_s=60)
+    logger.info("correction_raw request_id=%s raw=%s", request_id, raw)
+    
+    cleaned = strip_code_fences(raw)
+    logger.info("correction_cleaned request_id=%s cleaned=%s", request_id, cleaned[:500])
+    
+    parsed = json.loads(cleaned)
+    if not isinstance(parsed, dict):
+        raise ValueError("Correction output must be a JSON object.")
+        
+    return parsed

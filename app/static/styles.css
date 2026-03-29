@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b1020;
+  color: #e5e7eb;
+}
+
+.container {
+  width: min(1040px, 92%);
+  margin: 0 auto;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.card {
+  width: 100%;
+  background: #121a33;
+  border: 1px solid #243152;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.muted {
+  color: #9fb0da;
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #1f2a4a;
+  color: #d9e2ff;
+  border: 1px solid #33477d;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+textarea,
+input[type="text"] {
+  width: 100%;
+  background: #0f1730;
+  color: #e5e7eb;
+  border: 1px solid #2f406e;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+input[type="file"] {
+  width: 100%;
+}
+
+.section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #26365e;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badge-ok {
+  background: #164e38;
+  color: #b2ffd9;
+}
+
+.badge-warn {
+  background: #5a3a11;
+  color: #ffdca8;
+}
+
+.badge-error {
+  background: #5f1f28;
+  color: #ffc0c8;
+}
+
+ul {
+  margin-top: 8px;
+}
+
+.result-box {
+  background: #0f1730;
+  border: 1px solid #2a3a66;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.small {
+  font-size: 13px;
+}
+
+.log-box {
+  background: #0b1126;
+  border: 1px solid #2a3a66;
+  border-radius: 10px;
+  min-height: 180px;
+  max-height: 320px;
+  overflow: auto;
+  padding: 12px;
+  white-space: pre-wrap;
+  color: #cfe0ff;
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
