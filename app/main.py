@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 from datetime import datetime, timezone
 import json
 import logging
@@ -8,7 +9,7 @@ import os
 from pathlib import Path
 from uuid import uuid4
 
-from fastapi import FastAPI, File, Form, Header, HTTPException, Query, Request, UploadFile
+from fastapi import FastAPI, File, Form, HTTPException, Query, Request, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from dotenv import load_dotenv
@@ -20,6 +21,7 @@ from agents.verifier import run_verifier, run_correction
 from core.cleaning import clean_jd_text
 from core.decision import apply_stage2b_decisions
 from core.pdf_parser import PdfParserError, extract_pdf_text, has_extractable_text
+from core.pipeline import run_full_pipeline
 
 load_dotenv()
 
@@ -56,56 +58,6 @@ def configure_logging() -> logging.Logger:
 
 logger = configure_logging()
 DEV_LOG_TOKEN = os.getenv("DEV_LOG_TOKEN", "").strip()
-
-CONFIDENCE_PRIORITY = {
-    "failed": 0,
-    "low": 1,
-    "medium": 2,
-    "high": 3,
-}
-
-
-def downgrade_confidence(current: str | None, new: str) -> str:
-    # Keep the more conservative confidence level.
-    if current is None:
-        return new
-    if CONFIDENCE_PRIORITY[new] < CONFIDENCE_PRIORITY[current]:
-        return new
-    return current
-
-
-def apply_verification_guardrails(payload: JdAnalysisPayload, verifications: list, warnings: list) -> None:
-    """Helper to apply confidence downgrades and warnings based on verifier results."""
-    payload.verification = verifications
-
-    if not verifications:
-        payload.confidence = downgrade_confidence(payload.confidence, "low")
-        warnings.append(WarningItem(code="VERIFICATION_EMPTY", message="Verifier returned no checks."))
-        return
-
-    failed_fields = [v for v in verifications if not v.verified]
-    if len(failed_fields) >= 3:
-        payload.confidence = downgrade_confidence(payload.confidence, "failed")
-        warnings.append(
-            WarningItem(
-                code="VERIFICATION_FAILED",
-                message="Multiple extracted fields could not be verified against JD text.",
-                details={"failed_fields": [v.field for v in failed_fields]},
-            )
-        )
-    elif len(failed_fields) >= 2:
-        payload.confidence = downgrade_confidence(payload.confidence, "low")
-        warnings.append(
-            WarningItem(
-                code="VERIFICATION_FAILED",
-                message="Some extracted fields could not be verified against JD text.",
-                details={"failed_fields": [v.field for v in failed_fields]},
-            )
-        )
-
-    req_ver = next((v for v in verifications if v.field == "required_skills"), None)
-    if req_ver and not req_ver.verified:
-        payload.confidence = downgrade_confidence(payload.confidence, "low")
 
 
 def parse_skills_input(raw: str | None) -> list[str]:
@@ -151,31 +103,6 @@ def health() -> dict:
     return {"status": "ok"}
 
 
-def _assert_dev_logs_access(request: Request, token: str | None) -> None:
-    host = (request.client.host if request.client else "") or ""
-    if host not in {"127.0.0.1", "::1", "localhost"}:
-        raise HTTPException(status_code=403, detail="Dev logs are only accessible from localhost.")
-    if DEV_LOG_TOKEN and token != DEV_LOG_TOKEN:
-        raise HTTPException(status_code=403, detail="Invalid dev log token.")
-
-
-@app.get("/dev/logs")
-def get_dev_logs(
-    request: Request,
-    tail: int = Query(default=200, ge=1, le=2000),
-    x_dev_log_token: str | None = Header(default=None),
-) -> JSONResponse:
-    _assert_dev_logs_access(request, x_dev_log_token)
-    try:
-        content = LOG_FILE.read_text(encoding="utf-8")
-    except FileNotFoundError:
-        return JSONResponse({"lines": [], "count": 0, "path": str(LOG_FILE)})
-
-    lines = content.splitlines()
-    sliced = lines[-tail:]
-    return JSONResponse({"lines": sliced, "count": len(sliced), "path": str(LOG_FILE)})
-
-
 @app.get("/")
 def landing_page() -> FileResponse:
     return FileResponse(str(STATIC_DIR / "landing.html"))
@@ -207,16 +134,9 @@ async def analyze_with_resume(
 
     if has_text_jd == has_pdf_jd:
         logger.info("analyze_with_resume_invalid_source request_id=%s", request_id)
-        return AnalyzeResponse(
-            request_id=request_id,
-            status="error",
-            errors=[
-                ErrorItem(
-                    code="INVALID_INPUT",
-                    message="Provide exactly one JD source: jd_text or jd_pdf.",
-                    retryable=False,
-                )
-            ],
+        raise HTTPException(
+            status_code=400,
+            detail="Provide exactly one JD source: jd_text or jd_pdf."
         )
 
     manual_skills = parse_skills_input(skills)
@@ -387,20 +307,29 @@ async def analyze_with_resume(
 
     skills_source = "manual"
     user_skills = manual_skills
+    
+    # Merge resume skills with manual skills (deduplicated)
     if resume_skills:
-        user_skills = resume_skills
-        skills_source = "resume"
+        # Create normalized set for deduplication
+        seen = {s.lower() for s in manual_skills}
+        merged = list(manual_skills)  # Start with manual skills
+        for skill in resume_skills:
+            if skill.lower() not in seen:
+                merged.append(skill)
+                seen.add(skill.lower())
+        user_skills = merged
+        skills_source = "resume_merged" if manual_skills else "resume"
         warnings.append(
             WarningItem(
                 code="RESUME_SKILLS_USED",
-                message=f"Using {len(resume_skills)} extracted resume skills for matching.",
+                message=f"Using {len(merged)} skills ({len(resume_skills)} from resume, {len(manual_skills)} manual).",
             )
         )
         if manual_skills:
             warnings.append(
                 WarningItem(
-                    code="MANUAL_SKILLS_OVERRIDDEN",
-                    message="Manual skills were provided but resume skills were used as primary profile.",
+                    code="SKILLS_MERGED",
+                    message="Manual skills merged with resume skills (duplicates removed).",
                 )
             )
     elif resume_pdf is not None:
@@ -415,7 +344,7 @@ async def analyze_with_resume(
         len(user_skills),
         len(warnings),
     )
-    response = analyze(AnalyzeRequest(jd_text=jd_clean_text, skills=user_skills))
+    response = await asyncio.to_thread(analyze, AnalyzeRequest(jd_text=jd_clean_text, skills=user_skills))
     if response.payload is not None:
         response.payload.skills_source = skills_source
     if warnings:
@@ -435,7 +364,7 @@ def analyze(req: AnalyzeRequest) -> AnalyzeResponse:
     """
     Stage 1: raw JD text in → structured JSON out.
 
-    No PDFs, no LLM calls, no verifier yet.
+    Uses shared pipeline for consistency with eval.
     """
     request_id = f"req_{datetime.now(timezone.utc).isoformat()}_{uuid4().hex[:8]}"
 
@@ -463,96 +392,43 @@ def analyze(req: AnalyzeRequest) -> AnalyzeResponse:
     )
 
     warnings: list[WarningItem] = []
-    payload: JdAnalysisPayload | None = None
-    last_raw = ""
-    for attempt in (1, 2, 3):
-        try:
-            payload, last_raw = run_extractor(jd_text, request_id=request_id, attempt=attempt)
-        except Exception as e:
-            logger.info("analyze_llm_error request_id=%s attempt=%s error=%s", request_id, attempt, str(e))
+    
+    try:
+        # Use shared pipeline for full processing
+        from core.pipeline import run_full_pipeline
+        
+        result = run_full_pipeline(
+            jd_text=jd_text,
+            user_skills=req.skills,
+            request_id=request_id,
+            max_extractor_attempts=3,
+            apply_verifier=True,
+            apply_smart_retry=True,
+        )
+        
+        payload = result.payload
+        warnings = result.warnings
+        
+    except RuntimeError as e:
+        if "Extractor failed" in str(e) or "Extractor returned None" in str(e):
             return AnalyzeResponse(
                 request_id=request_id,
                 status="error",
                 errors=[
                     ErrorItem(
-                        code="LLM_PROVIDER_UNAVAILABLE",
-                        message="LLM provider is unavailable or misconfigured.",
+                        code="EXTRACTION_SCHEMA_INVALID",
+                        message="Model output could not be validated after retries.",
                         retryable=True,
-                        details={"attempt": attempt, "error": str(e)},
                     )
                 ],
             )
-        if payload is not None:
-            break
-
-    if payload is None:
+        raise
+    except Exception as e:
+        logger.exception("analyze_pipeline_error request_id=%s", request_id)
         return AnalyzeResponse(
             request_id=request_id,
             status="error",
-            errors=[
-                ErrorItem(
-                    code="EXTRACTION_SCHEMA_INVALID",
-                    message="Model output could not be validated after retries.",
-                    retryable=True,
-                    details={"raw": last_raw[:2000]},
-                )
-            ],
-        )
-
-    # Stage 2B: deterministic decision layer (no LLM).
-    payload = apply_stage2b_decisions(payload, req.skills)
-
-    # Stage 2C v1: Verify key extracted fields
-    try:
-        verifications = run_verifier(jd_text, payload.model_dump(), request_id=request_id)
-        apply_verification_guardrails(payload, verifications, warnings)
-        
-        # --- STAGE 2C v2: SMART RETRY ---
-        RETRYABLE_FIELDS = {"role", "required_skills", "work_mode", "experience_required"}
-        failed_fields = [v.field for v in verifications if not v.verified]
-        retryable_failed = [f for f in failed_fields if f in RETRYABLE_FIELDS]
-
-        if 1 <= len(retryable_failed) <= 2:
-            logger.info("smart_retry_triggered request_id=%s fields=%s", request_id, retryable_failed)
-            try:
-                # 1. Run Correction
-                corrections = run_correction(jd_text, payload.model_dump(), retryable_failed, request_id=request_id)
-                
-                # 2. Merge safely (only overwrite failed fields)
-                for field in retryable_failed:
-                    if field in corrections:
-                        setattr(payload, field, corrections[field])
-                
-                # 3. Mark retry usage (Assumes payload schema supports this field)
-                if hasattr(payload, "retries_used"):
-                    payload.retries_used += 1
-                warnings.append(WarningItem(code="RETRY_APPLIED", message=f"Corrected fields: {retryable_failed}"))
-                
-                # 4. Re-run Stage 2B (Decisions)
-                payload = apply_stage2b_decisions(payload, req.skills)
-                
-                # 5. Re-Verify & Re-apply Guardrails
-                new_verifications = run_verifier(jd_text, payload.model_dump(), request_id=request_id)
-                # Clear previous verification warnings so we don't double up
-                warnings = [w for w in warnings if w.code not in ("VERIFICATION_FAILED", "VERIFICATION_EMPTY")]
-                apply_verification_guardrails(payload, new_verifications, warnings)
-
-            except Exception as e:
-                logger.error("smart_retry_failed request_id=%s error=%s", request_id, str(e))
-                warnings.append(WarningItem(
-                    code="RETRY_FAILED", 
-                    message="Smart retry attempted but failed.", 
-                    details={"error": str(e)}
-                ))
-        # --- END SMART RETRY ---
-
-    except Exception as e:
-        warnings.append(
-            WarningItem(
-                code="VERIFIER_UNAVAILABLE",
-                message="Verifier step failed; returning unverified output.",
-                details={"error": str(e)},
-            )
+            errors=[ErrorItem(code="PIPELINE_ERROR", message=str(e), retryable=True)],
         )
 
     logger.info("analyze_ok request_id=%s", request_id)

@@ -1,0 +1,276 @@
+[
+  {
+    "id": "jd_01_java_fullstack_lead",
+    "file": "Java_Full_stack_Development_Lead.txt",
+    "status": "PASS",
+    "elapsed_s": 14.7,
+    "checks": [
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m extraction ok \u2014 role='Java Full stack Development Lead'  req=3  pools=0"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m recommendation = apply_with_caution"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m match_score = 36%  (expected 30\u201350%)"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m gaps contain all expected: ['Java', 'Spring Boot']"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m matched contains all expected: ['React']"
+      ]
+    ],
+    "passed": 5,
+    "total": 5,
+    "payload_summary": {
+      "role": "Java Full stack Development Lead",
+      "required_skills": [
+        "java",
+        "spring boot",
+        "react"
+      ],
+      "required_one_of": [],
+      "match_score": 36,
+      "recommendation": "apply_with_caution",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "jd_02_gen_ai_engineer",
+    "file": "Generative_AI_Engineer.txt",
+    "status": "FAIL",
+    "elapsed_s": 15.5,
+    "checks": [
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m extraction ok \u2014 role='Gen AI Intern'  req=10  pools=0"
+      ],
+      [
+        false,
+        "\u001b[91m\u2717\u001b[0m recommendation: got 'apply_with_caution', want 'apply_now'"
+      ],
+      [
+        false,
+        "\u001b[91m\u2717\u001b[0m match_score = 31%  (expected 70\u2013100%)"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m gaps contain all expected: (none required)"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m matched contains all expected: ['Python', 'LangChain']"
+      ]
+    ],
+    "passed": 3,
+    "total": 5,
+    "payload_summary": {
+      "role": "Gen AI Intern",
+      "required_skills": [
+        "python",
+        "machine learning",
+        "deep learning",
+        "tts",
+        "stt",
+        "rest api",
+        "gcp",
+        "aws",
+        "langchain",
+        "rag"
+      ],
+      "required_one_of": [],
+      "match_score": 31,
+      "recommendation": "apply_with_caution",
+      "confidence": "medium"
+    }
+  },
+  {
+    "id": "jd_03_fullstack_intern",
+    "file": "Full_Stack_Development_Internship_i.txt",
+    "status": "FAIL",
+    "elapsed_s": 17.4,
+    "checks": [
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m extraction ok \u2014 role='Full Stack Development Intern'  req=13  pools=0"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m recommendation = apply_now"
+      ],
+      [
+        false,
+        "\u001b[91m\u2717\u001b[0m match_score = 72%  (expected 80\u2013100%)"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m gaps contain all expected: (none required)"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m matched contains all expected: ['Python', 'React', 'Node.js']"
+      ]
+    ],
+    "passed": 4,
+    "total": 5,
+    "payload_summary": {
+      "role": "Full Stack Development Intern",
+      "required_skills": [
+        "php",
+        "mysql",
+        "html",
+        "css",
+        "javascript",
+        "python",
+        "mongodb",
+        "angular",
+        "node.js",
+        "react",
+        "flutter",
+        "dart",
+        "git"
+      ],
+      "required_one_of": [],
+      "match_score": 72,
+      "recommendation": "apply_now",
+      "confidence": "low"
+    }
+  },
+  {
+    "id": "jd_04_security_engineer_google",
+    "file": "Security_Engineer__University_Gradu.txt",
+    "status": "PASS",
+    "elapsed_s": 7.6,
+    "checks": [
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m extraction ok \u2014 role='Security Engineer'  req=2  pools=1"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m recommendation = apply_with_caution"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m match_score = 38%  (expected 35\u201365%)"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m gaps contain all expected: ['Linux']"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m matched contains all expected: ['Python']"
+      ]
+    ],
+    "passed": 5,
+    "total": 5,
+    "payload_summary": {
+      "role": "Security Engineer",
+      "required_skills": [
+        "chrome os",
+        "linux"
+      ],
+      "required_one_of": [
+        [
+          "go",
+          "python",
+          "c++",
+          "java"
+        ]
+      ],
+      "match_score": 38,
+      "recommendation": "apply_with_caution",
+      "confidence": "low"
+    }
+  },
+  {
+    "id": "jd_05_ibm_aws_fullstack",
+    "file": "Application_Developer-AWS_Cloud_Ful.txt",
+    "status": "FAIL",
+    "elapsed_s": 8.0,
+    "checks": [
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m extraction ok \u2014 role='Application Developer-AWS Cloud FullStack'  req=8  pools=0"
+      ],
+      [
+        false,
+        "\u001b[91m\u2717\u001b[0m recommendation: got 'not_recommended', want 'apply_with_caution'"
+      ],
+      [
+        false,
+        "\u001b[91m\u2717\u001b[0m match_score = 36%  (expected 40\u201370%)"
+      ],
+      [
+        false,
+        "\u001b[91m\u2717\u001b[0m gaps missing: ['Kafka']  |  got: ['angular', 'java', 'aws', 'kinesis', 'spring boot']"
+      ],
+      [
+        true,
+        "\u001b[92m\u2713\u001b[0m matched contains all expected: ['Python', 'ReactJS']"
+      ]
+    ],
+    "passed": 2,
+    "total": 5,
+    "payload_summary": {
+      "role": "Application Developer-AWS Cloud FullStack",
+      "required_skills": [
+        "angular",
+        "java",
+        "node.js",
+        "python",
+        "aws",
+        "kinesis",
+        "react",
+        "spring boot"
+      ],
+      "required_one_of": [],
+      "match_score": 36,
+      "recommendation": "not_recommended",
+      "confidence": "low"
+    }
+  },
+  {
+    "id": "jd_06_jpmorgan_java_aws",
+    "file": "Software_Engineer_III_-_Java_AWS_Hy.txt",
+    "status": "ERROR",
+    "reason": "pipeline crashed: Extractor failed after 1 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kn7ea2wjf37rpax3cvzd3z19` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98967, Requested 1632. Please try again in 8m37.535999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "checks": [],
+    "passed": 0,
+    "total": 0
+  },
+  {
+    "id": "jd_07_ninjavan_senior_fullstack",
+    "file": "Senior_Full_Stack_Developer__SSE_.txt",
+    "status": "ERROR",
+    "reason": "pipeline crashed: Extractor failed after 1 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kn7ea2wjf37rpax3cvzd3z19` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98963, Requested 1805. Please try again in 11m3.552s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "checks": [],
+    "passed": 0,
+    "total": 0
+  },
+  {
+    "id": "jd_08_qualcomm_android_display",
+    "file": "Android_Display_Dev__CE_-_Engineer.txt",
+    "status": "ERROR",
+    "reason": "pipeline crashed: Extractor failed after 1 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kn7ea2wjf37rpax3cvzd3z19` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98960, Requested 1765. Please try again in 10m26.4s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "checks": [],
+    "passed": 0,
+    "total": 0
+  },
+  {
+    "id": "jd_09_apple_java_angular",
+    "file": "Full_stack_Engineer_-_Java___Angula.txt",
+    "status": "ERROR",
+    "reason": "pipeline crashed: Extractor failed after 1 attempts: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kn7ea2wjf37rpax3cvzd3z19` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98956, Requested 1784. Please try again in 10m39.36s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "checks": [],
+    "passed": 0,
+    "total": 0
+  }
+]

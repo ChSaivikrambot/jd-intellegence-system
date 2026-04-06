@@ -29,22 +29,29 @@ class JdAnalysisPayload(BaseModel):
     company: Optional[str] = None
     role: Optional[str] = None
     truly_entry_level: Optional[bool] = None
+    
+    # NEW: Unified skills list (extractor output) — parser will classify into required/preferred
+    skills: List[str] = Field(default_factory=list, description="All technical skills mentioned in JD (extractor output)")
+    
+    # Parser-classified fields
     required_skills: List[str] = Field(default_factory=list)
+    required_one_of: List[List[str]] = Field(default_factory=list)  # Skill pools: need 1 from each
     preferred_skills: List[str] = Field(default_factory=list)
     experience_required: Optional[str] = None
     red_flags: List[str] = Field(default_factory=list)
     compensation: Optional[str] = None
     work_mode: Optional[Literal["remote", "hybrid", "onsite", "not_mentioned"]] = None
 
-    # Where did the skills come from? (manual vs resume feature)
-    skills_source: Literal["manual", "resume"] = "manual"
+    # Where did the skills come from? (manual vs resume vs llm_extracted)
+    skills_source: Literal["manual", "resume", "llm_extracted"] = "manual"
 
     # Decision layer fields (Stage 2B later). Included for shape stability.
     match_score: Optional[int] = Field(default=None, ge=0, le=100)
+    adjusted_score: Optional[int] = Field(default=None, ge=0, le=100)
     matched_skills: List[str] = Field(default_factory=list)
     skill_gaps: List[str] = Field(default_factory=list)
     recommendation: Optional[
-        Literal["apply_now", "apply_with_caution", "upskill_first", "high_risk", "insufficient_data"]
+        Literal["apply_now", "apply_with_caution", "not_recommended", "insufficient_data"]
     ] = None
     decision_reason: Optional[str] = None
     confidence: Optional[Literal["high", "medium", "low", "failed"]] = None

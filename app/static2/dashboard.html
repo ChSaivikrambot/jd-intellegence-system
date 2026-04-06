@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JD Intelligence Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="container">
+        <section class="card">
+          <div class="row" style="justify-content: space-between; align-items: center">
+            <h2 style="margin-bottom: 0">Dashboard</h2>
+            <a href="/"><button class="btn btn-secondary" type="button">Back</button></a>
+          </div>
+          <p class="muted small">
+            Use one JD source (text or PDF). Resume PDF is optional.
+          </p>
+
+          <div class="section">
+            <label>JD Source</label>
+            <div class="row small">
+              <label><input type="radio" name="jd_source" value="text" checked /> Text JD</label>
+              <label><input type="radio" name="jd_source" value="pdf" /> PDF JD</label>
+            </div>
+          </div>
+
+          <div id="jdTextSection" class="section">
+            <label for="jdText">Job Description Text</label>
+            <textarea id="jdText" placeholder="Paste job description here..."></textarea>
+          </div>
+
+          <div id="jdPdfSection" class="section" style="display: none">
+            <label for="jdPdf">Upload JD PDF</label>
+            <input id="jdPdf" type="file" accept="application/pdf" />
+          </div>
+
+          <div class="section">
+            <label for="resumePdf">Resume PDF (optional)</label>
+            <input id="resumePdf" type="file" accept="application/pdf" />
+          </div>
+
+          <div class="section">
+            <label for="skillsInput">Manual Skills (comma separated)</label>
+            <input
+              id="skillsInput"
+              type="text"
+              placeholder="Python, FastAPI, Docker"
+            />
+            <p class="muted small" style="margin-bottom: 0">
+              If resume is uploaded and backend mode C is available, resume skills can be used.
+            </p>
+          </div>
+
+          <div class="section">
+            <button id="analyzeBtn" class="btn btn-primary" type="button">Analyze</button>
+            <span id="statusText" class="muted small" style="margin-left: 8px"></span>
+          </div>
+
+          <div class="section grid grid-2">
+            <div class="result-box">
+              <h3>Outcome</h3>
+              <p><strong>Status:</strong> <span id="statusValue">-</span></p>
+              <p><strong>Skills Source:</strong> <span id="skillsSourceValue">-</span></p>
+              <p><strong>Recommendation:</strong> <span id="recommendationValue">-</span></p>
+              <p><strong>Confidence:</strong> <span id="confidenceValue">-</span></p>
+              <p><strong>Match Score:</strong> <span id="scoreValue">-</span></p>
+            </div>
+            <div class="result-box">
+              <h3>Skills</h3>
+              <p><strong>Matched:</strong></p>
+              <ul id="matchedList"><li>-</li></ul>
+              <p><strong>Gaps:</strong></p>
+              <ul id="gapsList"><li>-</li></ul>
+            </div>
+          </div>
+
+          <div class="section grid grid-2">
+            <div class="result-box">
+              <h3>Verification</h3>
+              <ul id="verificationList"><li>-</li></ul>
+            </div>
+            <div class="result-box">
+              <h3>Warnings / Errors</h3>
+              <ul id="messagesList"><li>-</li></ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="/static/dashboard.js?v=3"></script>
+  </body>
+</html>

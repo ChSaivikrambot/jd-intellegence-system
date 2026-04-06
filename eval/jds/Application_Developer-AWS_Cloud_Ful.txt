@@ -1,0 +1,55 @@
+Application Developer-AWS Cloud FullStack 
+Hyderabad, Telangana, India · 6 days ago · 5 people clicked apply
+Promoted by hirer · Responses managed off LinkedIn
+
+
+Hybrid
+
+Full-time
+
+Apply
+
+Save
+Save Application Developer-AWS Cloud FullStack  at IBM
+How your profile and resume fit this job
+Get AI-powered advice on this job and more exclusive features with Premium. Try Premium for ₹0
+
+
+Show match details
+
+Tailor my resume
+
+Help me stand out
+About the job
+Introduction
+
+A career in IBM Consulting is built on long-term client relationships and close collaboration worldwide. You’ll work with leading companies across industries, helping them shape their hybrid cloud and AI journeys. With support from our strategic partners, robust IBM technology, and Red Hat, you’ll have the tools to drive meaningful change and accelerate client impact. At IBM Consulting, curiosity fuels success. You’ll be encouraged to challenge the norm, explore new ideas, and create innovative solutions that deliver real results. Our culture of growth and empathy focuses on your long-term career development while valuing your unique skills and experiences.
+
+Your Role And Responsibilities
+
+As an Application Developer: AWS Cloud FullStack, you will design and develop scalable, resilient, and cloud-native applications using modern technologies and methodologies. You will work in an Agile environment, delivering high-quality solutions through continuous release and improvement cycles. Your primary responsibilities will include:
+
+ Develop Rich UI Applications: Design and develop rich user interface applications using Single Page Applications (SPA) or microfrontends, utilizing frameworks such as ReactJS or Angular.
+ Develop Scalable Backend Microservices: Develop scalable and resilient backend microservices based on 12-factor principles, exposing functionality via API and event interfaces, using programming languages such as Java, NodeJS, or Python.
+ Implement Cloud-Native CI/CD: Implement cloud-native Continuous Integration and Continuous Deployment (CI/CD) pipelines for change release, ensuring seamless delivery of applications and services.
+ Manage AWS Services: Run and manage services on AWS, including PaaS, content delivery, routing services, databases, event-driven applications, and observability tools.
+ Ensure DevSecOps Practices: Implement DevSecOps practices using AWS services such as CodeBuild, CodeDeploy, CodePipeline, and CodeCommit, ensuring secure and efficient application delivery.
+
+Preferred Education
+
+Master's Degree
+
+Required Technical And Professional Expertise
+
+ Cloud-Native Application Development: Experience with designing and developing scalable, resilient, and cloud-native applications using modern technologies and methodologies, including microservices-based modular designs and API-driven microservices.
+ Full Stack Development: Experience with developing rich UI applications using Single Page Applications (SPA) or microfrontends, and scalable backend microservices based on 12-factor principles, using frameworks such as ReactJS, Angular, Springboot, and programming languages such as Java, NodeJS, or Python.
+ AWS Services Management: Experience with running and managing services on AWS, including PaaS, content delivery, routing services, databases, event-driven applications, and observability tools, such as EKS, ECS, Fargate, Lambda, CloudFront, API Gateway, and CloudWatch.
+ Cloud-Native CI/CD: Experience with implementing cloud-native Continuous Integration and Continuous Deployment (CI/CD) pipelines for change release, using tools such as CodeBuild, CodeDeploy, CodePipeline, and CodeCommit.
+ Event-Driven Architecture: Experience with developing event-driven applications using messaging and streaming services, such as Kafka, SQS, SNS, and Kinesis Streams.
+
+Preferred Technical And Professional Experience
+
+ Proficiency in Additional Frameworks: Exposure to Quarkus, Django, or Express Js frameworks for developing scalable and resilient backend microservices.
+ Knowledge of No-SQL Modelling: Experience working with modern No-SQL modelling techniques for data model development.
+ Familiarity with GraalVM: Exposure to GraalVM runtime for developing scalable and resilient backend microservices.
+

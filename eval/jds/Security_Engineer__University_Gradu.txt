@@ -1,0 +1,52 @@
+Security Engineer, University Graduate, 2026 
+Hyderabad, Telangana, India · Reposted 3 days ago · Over 100 people clicked apply
+Promoted by hirer · Responses managed off LinkedIn
+
+
+On-site
+
+Full-time
+
+Apply
+
+Save
+Save Security Engineer, University Graduate, 2026  at Google
+People you can reach out to
+Keshav Memorial Institute of Technology logo
+Keshav Memorial Institute of Technology logo
+School alumni from Keshav Memorial Institute of Technology
+
+Show all
+About the job
+Minimum qualifications:
+
+Bachelor's degree or equivalent practical experience.
+1 years of experience in responding to security alerts and incidents.
+Experience in identity management, or operating systems such as Chrome OS, Linux, etc.
+Experience programming in Go, Python, C/C++, or Java.
+
+Preferred qualifications:
+
+Experience in a security-oriented role or in server operations.
+Experience with monitoring, security measurement, and security observability.
+Knowledge of OS internals and platform security.
+
+About The Job
+
+Security is at the core of Google's design and development process: it is built into the DNA of our products. The same is true of our offices. You're an expert who shares our seriousness about security and our commitment to confidentiality. You'll collaborate with our Facilities Management team to create innovative security strategies, investigate breaches and create risk assessment plans for the future. You believe that providing effective security doesn't come at the expense of customer service - you will be our bodyguard (and our long lost pal).
+
+The Enterprise Infrastructure Protection Security team is a global Engineering team that helps design, build, and use infrastructure securely at scale. As a Security Engineer, you will work on a broad set of efforts focusing on scaling and automating security infrastructure and processes. We contribute to open source security software, conduct applied research, and implement novel technologies and architecture to manage enterprise security across computing platforms such as mobile and cloud. Examples include establishing and enforcing controls to protect all of Google’s environments, defending a set of clients and servers in adverse environments, from common operating systems to emerging software and hardware platforms, and evolving authentication, access infrastructure, and policy to simplify user experience and keep Google safe.
+
+The Core team builds the technical foundation behind Google’s flagship products. We are owners and advocates for the underlying design elements, developer platforms, product components, and infrastructure at Google. These are the essential building blocks for excellent, safe, and coherent experiences for our users and drive the pace of innovation for every developer. We look across Google’s products to build central solutions, break down technical barriers and strengthen existing systems. As the Core team, we have a mandate and a unique opportunity to impact important technical decisions across the company.
+
+Responsibilities
+
+Design infrastructure and drive its implementation to protect Google networks and systems.
+Provide security expertise and guidance to a different set of Google engineering and business teams.
+Conduct security reviews of core corporate and production infrastructure.
+Drive enterprise focused security improvements to Google products and services.
+Build security tools and processes for critical infrastructure protection, monitoring and remediation.
+
+
+Google is proud to be an equal opportunity workplace and is an affirmative action employer. We are committed to equal employment opportunity regardless of race, color, ancestry, religion, sex, national origin, sexual orientation, age, citizenship, marital status, disability, gender identity or Veteran status. We also consider qualified applicants regardless of criminal histories, consistent with legal requirements. See also Google's EEO Policy and EEO is the Law. If you have a disability or special need that requires accommodation, please let us know by completing our Accommodations for Applicants form .
+

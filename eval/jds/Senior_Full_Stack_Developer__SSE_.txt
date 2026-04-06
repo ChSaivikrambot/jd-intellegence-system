@@ -1,0 +1,93 @@
+Senior Full Stack Developer (SSE) 
+Hyderabad, Telangana, India · Reposted 5 days ago · Over 100 people clicked apply
+Promoted by hirer · Responses managed off LinkedIn
+
+
+On-site
+
+Full-time
+
+Apply
+
+Save
+Save Senior Full Stack Developer (SSE)  at Ninja Van
+How your profile and resume fit this job
+Get AI-powered advice on this job and more exclusive features with Premium. Try Premium for ₹0
+
+
+Show match details
+
+Tailor my resume
+
+Help me stand out
+About the job
+Ninja Van is a late-stage logtech startup that is disrupting a massive industry with innovation and cutting edge technology. Launched 2014 in Singapore, we have grown rapidly to become one of Southeast Asia's largest and fastest-growing express logistics companies. Since our inception, we’ve delivered to 100 million different customers across the region with added predictability, flexibility and convenience. Join us in our mission to connect shippers and shoppers across Southeast Asia to a world of new possibilities.
+
+More About Us
+
+ We process 250 million API requests and 3TB of data every day.
+ We deliver more than 2 million parcels every day.
+ 100% network coverage with 2600+ hubs and stations in 6 SEA markets (Singapore, Malaysia, Indonesia, Thailand, Vietnam and Philippines), reaching 500 million consumers.
+ 2 Million active shippers in all e-commerce segments, from the largest marketplaces to the individual social commerce sellers.
+ Raised more than US$500 million over five rounds.
+
+We are looking for world-class talent to join our crack team of engineers, product managers and designers. We want people who are passionate about creating software that makes a difference to the world. We like people who are brimming with ideas and who take initiative rather than wait to be told what to do. We prize team-first mentality, personal responsibility and tenacity to solve hard problems and meet deadlines. As part of a small and lean team, you will have a very direct impact on the success of the company.
+
+Responsibilities
+
+Design, develop, and maintain software that drives Ninja Van’s complex logistics operations.
+Take ownership of the architecture and implementation of major features, modules, and entire products.
+Collaborate with cross-functional teams—including product managers, UX designers, and QA engineers—to deliver high-quality software on time.
+Develop and maintain APIs, and integrate third-party services where necessary.
+Ensure application performance, security, reliability, and scalability.
+Troubleshoot, debug, and enhance existing systems.
+Write clean, maintainable, and efficient code following industry best practices.
+Participate actively in code reviews, technical discussions, and team collaboration activities.
+Stay current with emerging tools, frameworks, and best practices in software development.
+
+Requirements
+
+Minimum 4+ years of industry experience is mandatory.
+Proven experience as a Full Stack Developer or in a similar role.
+Proficiency in front-end technologies such as HTML, CSS/SCSS, JavaScript, and libraries/frameworks like React.js and TypeScript.
+Strong back-end development experience using Java or Golang (preferably Golang).
+Hands-on experience with SQL/NoSQL databases (e.g., PostgreSQL) and version control systems (e.g., Git).
+Solid understanding of RESTful APIs and microservices architecture.
+Excellent problem-solving skills and the ability to collaborate effectively in a team environment.
+Knowledge of cloud services (e.g., AWS, GCP, Azure) is a plus.
+Bachelor’s degree in Computer Science, Engineering, or a related field.
+
+Please apply only if you have relevant experience with the technologies and experience mentioned above.
+
+Tech Stack
+
+Backend: Play (Java 8+), Golang, Node.js , Python, FastAPI
+
+Frontend: AngularJS, ReactJS
+
+Mobile: Android, Flutter, React Native
+
+Cache: Hazelcast, Redis
+
+Data storage: MySQL, TiDB, Elasticsearch, Delta Lake
+
+Infrastructure monitoring: Prometheus, Grafana
+
+Orchestrator: Kubernetes
+
+Containerization: Docker, Containerd
+
+Cloud Provider: GCP, AWS
+
+Data pipelines: Apache Kafka, Spark Streaming, Maxwell/Debezium, PySpark, TiCDC
+
+Workflow manager: Apache Airflow
+
+Query engines: Apache Spark, Trino
+
+Submit a job application
+
+By applying to the job, you acknowledge that you have read, understood and agreed to our Privacy Policy Notice (the “Notice”) and consent to the collection, use and/or disclosure of your personal data by Ninja Logistics Pte Ltd (the “Company”) for the purposes set out in the Notice. In the event that your job application or personal data was received from any third party pursuant to the purposes set out in the Notice, you warrant that such third party has been duly authorised by you to disclose your personal data to us for the purposes set out in the the Notice.
+
+We may use artificial intelligence (AI) tools to support parts of the hiring process, such as reviewing applications, analyzing resumes, or assessing responses. These tools assist our recruitment team but do not replace human judgment. Final hiring decisions are ultimately made by humans. If you would like more information about how your data is processed, please contact us.
+

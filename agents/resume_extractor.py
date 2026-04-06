@@ -31,25 +31,30 @@ def _clean_skills(values: list) -> List[str]:
 
 
 def build_resume_skills_prompt(resume_markdown: str) -> str:
-    return f"""
-Extract only technical/professional skills from this resume.
+    return f"""Extract only technical skills the candidate has PRACTICAL EXPERIENCE with.
 
-Rules:
-- Return STRICT JSON object with one key: "skills".
-- "skills" must be an array of short skill names.
-- Include tools, languages, frameworks, databases, cloud, devops.
-- Exclude soft skills and generic adjectives.
-- Do not invent anything not present in resume.
-- Keep deduplicated and concise.
+STRICT RULES:
+1. ONLY include skills used in projects, work experience, or education with practical application
+2. DO NOT include skills mentioned only in "Languages" or "Skills" sections without context
+3. DO NOT infer skills - if resume says "familiar with Java" → DO NOT include Java
+4. DO NOT include skills from coursework unless explicitly used in projects
+
+Examples of GOOD extraction:
+- "Built REST API using FastAPI and PostgreSQL" → ["FastAPI", "PostgreSQL"]
+- "Developed React frontend with TypeScript" → ["React", "TypeScript"]
+
+Examples of BAD extraction:
+- Resume lists "Languages: C++, Java, Python" with no context → []
+- "Familiar with machine learning concepts" → []
+
+Return STRICT JSON with one key "skills":
+{{
+  "skills": ["Python", "FastAPI", "React"]
+}}
 
 Resume text (markdown):
 {resume_markdown}
-
-Return JSON:
-{{
-  "skills": ["Python", "FastAPI", "Postgres"]
-}}
-""".strip()
+"""
 
 
 def run_resume_skill_extractor(resume_markdown: str, request_id: str) -> List[str]:

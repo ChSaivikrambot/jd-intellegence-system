@@ -1,0 +1,79 @@
+Full stack Engineer - Java & Angular/Vue 
+Hyderabad, Telangana, India · 2 months ago · Over 100 people clicked apply
+Responses managed off LinkedIn
+
+
+On-site
+
+Full-time
+
+Apply
+
+Save
+Save Full stack Engineer - Java & Angular/Vue  at Apple
+How your profile and resume fit this job
+Get AI-powered advice on this job and more exclusive features with Premium. Try Premium for ₹0
+
+
+
+Show match details
+
+Tailor my resume
+
+Help me stand out
+
+About the job
+Summary
+
+The people here at Apple don't just build products—they craft the kind of wonder that has revolutionised entire industries! At Apple, new insights have a way of becoming extraordinary products, services, and customer experiences very quickly. Bring passion and dedication to your job, and there’s no telling what we could accomplish. Join Apple, and help us leave the world better than we found it!
+
+The IS&T (Information Systems and Technology) organization at Apple builds and maintains mission-critical applications and services that support Apple customers, employees, partners, and products worldwide. IS&T’s Legal and Global Security Solutions (LGSS) Team is seeking an experienced full stack developer to join its engineering organization where you will work with a highly talented team of software engineers and product managers to build scalable and secure solutions that empower Apple’s legal, security and compliance functions. This is a high-impact role which requires owning and driving complex projects while also unblocking other engineers and mentoring them for success.
+
+About Lgss Engineering
+
+We build and maintain critical tools and services for legal, compliance and security requirements at Apple. We are responsible for eDiscovery solutions for data collection, data preservation, legal holds, knowledge mining as well as law enforcement and privacy compliance tools. We are also responsible for developing key compliance and crisis management tools that protect Apple’s assets, people, and regulatory obligations as well as tools for intellectual property enforcement and fraud prevention. We own the full software engineering lifecycle for all of these solutions from software development and quality assurance to DevOps and sustained production support.
+
+Description
+
+Our responsibilities will include all aspects of software development from architecture and system design to implementation and maintenance. This role requires a highly skilled and adaptable engineer who thrives in an ambiguous environment and takes ownership of project delivery from inception to deployment. The ideal candidate will collaborate across teams, mentor engineers and drive innovation while implementing features aligned with our product roadmap. In this role, you will:
+
+ Design, develop and maintain scalable, reliable and secure web applications.
+ Architect robust solutions while considering performance, security and maintainability.
+ Work with functional leads, business partners, project managers and technical teams in a cross-functional environment to understand requirements and implement solutions.
+ Provide level-of-effort estimations based on thorough research, code study and work prioritization to inform partners of progress and delivery timelines.
+ Perform and ensure rigorous code reviews to ensure high-quality code.
+ Mentor and provide technical guidance to other software engineers.
+ Identify root causes of complex technical issues and deliver robust fixes.
+ Participate in operational duty rotations when needed to resolve production issues and critical customer escalations.
+ Share knowledge through presentations, documentations and best practice discussions.
+ Identify and contribute to process improvements that enhance efficiency and maintainability.
+ Drive innovation for new and existing solutions through Generative AI and other AI/ML techniques.
+
+Minimum Qualifications
+
+5 - 10 years in software development experience in Java, with a strong understanding of object-oriented concepts and design.
+Proven frontend development experience with Angular/Vue.
+Proven experience in leading a team of engineers.
+Strong computer science fundamentals including data structures, algorithms and system design.
+Demonstrated experience in building and maintaining large-scale software systems, with a keen eye for scalability, efficiency, and robustness.
+Hands-on experience with relational and non-relational databases.
+Proficiency in working with Unix operating system.
+Solid knowledge of application performance improvement techniques and caching solutions.
+Strong problem-solving and debugging skills.
+Proven ability to work in a fast-paced and collaborative team environment, displaying a results-driven attitude.
+Ability to communicate effectively, both written and verbal, to both technical and non-technical partners across cross-functional teams.
+Bachelors degree in Computer Science/Engineering or equivalent.
+
+Preferred Qualifications
+
+Familiarity with AI/ML algorithms and frameworks with experience in integrating AI/ML concepts into software design and implementation.
+Solid understanding of key software architecture principles including load-balancing, system observability, microservices, security, cryptography, performance and reliability.
+Knowledge of AI-powered Assistant tools and IDE integrations.
+Knowledge of cloud data warehousing platforms such as Snowflake is highly valued.
+Hands-on experience in writing components, frameworks and libraries that improve software efficiency and scalability.
+Familiarity with cloud platforms like AWS or GCP and CI/CD tools.
+Strong appreciation for software quality with experience writing unit tests and collaborating with quality engineering teams to develop comprehensive test plans.
+Working experience with Agile development methodologies.
+Master’s degree in Computer Science/Engineering or equivalent.
+
+

@@ -11,18 +11,27 @@
       <div class="container">
         <section class="card">
           <div class="row" style="justify-content: space-between; align-items: center">
-            <h2 style="margin-bottom: 0">Dashboard</h2>
-            <a href="/"><button class="btn btn-secondary" type="button">Back</button></a>
+            <div class="brand">
+              <span class="brand-dot"></span>
+              <h2 style="margin-bottom: 0">JD Intelligence</h2>
+            </div>
+            <a href="/"><button class="btn btn-secondary" type="button">← Back</button></a>
           </div>
-          <p class="muted small">
+          <p class="muted small" style="margin-top: 8px;">
             Use one JD source (text or PDF). Resume PDF is optional.
           </p>
 
           <div class="section">
             <label>JD Source</label>
-            <div class="row small">
-              <label><input type="radio" name="jd_source" value="text" checked /> Text JD</label>
-              <label><input type="radio" name="jd_source" value="pdf" /> PDF JD</label>
+            <div class="toggle-group">
+              <label class="toggle-option">
+                <input type="radio" name="jd_source" value="text" checked />
+                <span>Text JD</span>
+              </label>
+              <label class="toggle-option">
+                <input type="radio" name="jd_source" value="pdf" />
+                <span>PDF JD</span>
+              </label>
             </div>
           </div>
 
@@ -37,70 +46,89 @@
           </div>
 
           <div class="section">
-            <label for="resumePdf">Resume PDF (optional)</label>
+            <label for="resumePdf">Resume PDF <span class="muted small">(optional)</span></label>
             <input id="resumePdf" type="file" accept="application/pdf" />
           </div>
 
           <div class="section">
-            <label for="skillsInput">Manual Skills (comma separated)</label>
-            <input
-              id="skillsInput"
-              type="text"
-              placeholder="Python, FastAPI, Docker"
-            />
-            <p class="muted small" style="margin-bottom: 0">
+            <label for="skillsInput">Your Skills <span class="muted small">(comma separated)</span></label>
+            <input id="skillsInput" type="text" placeholder="Python, FastAPI, Docker, PostgreSQL..." />
+            <p class="muted small" style="margin-bottom: 0; margin-top: 6px;">
               If resume is uploaded and backend mode C is available, resume skills can be used.
             </p>
           </div>
 
           <div class="section">
-            <button id="analyzeBtn" class="btn btn-primary" type="button">Analyze</button>
-            <span id="statusText" class="muted small" style="margin-left: 8px"></span>
+            <button id="analyzeBtn" class="btn btn-primary" type="button">
+              <span class="btn-icon">⚡</span> Analyze
+            </button>
+            <span id="statusText" class="muted small" style="margin-left: 10px"></span>
           </div>
 
-          <div class="section grid grid-2">
-            <div class="result-box">
-              <h3>Outcome</h3>
-              <p><strong>Status:</strong> <span id="statusValue">-</span></p>
-              <p><strong>Skills Source:</strong> <span id="skillsSourceValue">-</span></p>
-              <p><strong>Recommendation:</strong> <span id="recommendationValue">-</span></p>
-              <p><strong>Confidence:</strong> <span id="confidenceValue">-</span></p>
-              <p><strong>Match Score:</strong> <span id="scoreValue">-</span></p>
-            </div>
-            <div class="result-box">
-              <h3>Skills</h3>
-              <p><strong>Matched:</strong></p>
-              <ul id="matchedList"><li>-</li></ul>
-              <p><strong>Gaps:</strong></p>
-              <ul id="gapsList"><li>-</li></ul>
-            </div>
-          </div>
+          <!-- Results -->
+          <div id="resultsSection" class="results-area" style="display:none">
 
-          <div class="section grid grid-2">
-            <div class="result-box">
-              <h3>Verification</h3>
-              <ul id="verificationList"><li>-</li></ul>
-            </div>
-            <div class="result-box">
-              <h3>Warnings / Errors</h3>
-              <ul id="messagesList"><li>-</li></ul>
-            </div>
-          </div>
+            <div class="section grid grid-2">
+              <div class="result-box">
+                <h3>Outcome</h3>
+                <div class="outcome-row">
+                  <span class="outcome-label">Status</span>
+                  <span id="statusValue" class="outcome-value">-</span>
+                </div>
+                <div class="outcome-row">
+                  <span class="outcome-label">Skills Source</span>
+                  <span id="skillsSourceValue" class="outcome-value">-</span>
+                </div>
+                <div class="outcome-row">
+                  <span class="outcome-label">Recommendation</span>
+                  <span id="recommendationValue" class="outcome-value recommendation-badge">-</span>
+                </div>
+                <div class="outcome-row reason-row" id="reasonRow" style="display:none">
+                  <span class="outcome-label">Reason</span>
+                  <span id="decisionReasonValue" class="outcome-value reason-text">-</span>
+                </div>
+                <div class="outcome-row">
+                  <span class="outcome-label">Confidence</span>
+                  <span id="confidenceValue" class="outcome-value">-</span>
+                </div>
+                <div class="outcome-row">
+                  <span class="outcome-label">Match Score</span>
+                  <span id="scoreValue" class="outcome-value score-value">-</span>
+                </div>
+                <!-- Score bar -->
+                <div class="score-bar-wrap" id="scoreBarWrap" style="display:none">
+                  <div class="score-bar-track">
+                    <div class="score-bar-fill" id="scoreBarFill"></div>
+                  </div>
+                </div>
+              </div>
 
-          <div id="devLogsSection" class="section" style="display: none">
-            <div class="row" style="justify-content: space-between; align-items: center">
-              <h3 style="margin-bottom: 0">Dev Logs (localhost only)</h3>
-              <button id="refreshLogsBtn" class="btn btn-secondary" type="button">Refresh Logs</button>
+              <div class="result-box">
+                <h3>Skills</h3>
+                <p class="skill-section-label matched-label">✓ Matched</p>
+                <ul id="matchedList" class="skill-list matched-list"><li>-</li></ul>
+                <p class="skill-section-label gap-label" style="margin-top: 12px;">✗ Gaps</p>
+                <ul id="gapsList" class="skill-list gap-list"><li>-</li></ul>
+              </div>
             </div>
-            <p class="muted small">
-              Hidden by default. Open dashboard with <code>?dev=1</code>. If <code>DEV_LOG_TOKEN</code> is set, enter it below.
-            </p>
-            <input id="devTokenInput" type="text" placeholder="DEV_LOG_TOKEN (optional)" />
-            <pre id="devLogsOutput" class="log-box"></pre>
+
+            <div class="section grid grid-2">
+              <div class="result-box">
+                <h3>Verification</h3>
+                <ul id="verificationList"><li>-</li></ul>
+              </div>
+              <div class="result-box">
+                <h3>Warnings / Errors</h3>
+                <ul id="messagesList"><li>-</li></ul>
+              </div>
+            </div>
+
           </div>
+          <!-- end resultsSection -->
+
         </section>
       </div>
     </main>
-    <script src="/static/dashboard.js"></script>
+    <script src="/static/dashboard.js?v=4"></script>
   </body>
 </html>

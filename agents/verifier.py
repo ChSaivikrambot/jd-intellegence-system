@@ -12,11 +12,20 @@ from core.utils.json_cleaner import strip_code_fences
 KEY_FIELDS = [
     "role",
     "required_skills",
+    "required_one_of",
     "work_mode",
     "experience_required",
 ]
 
 logger = logging.getLogger("doc_intelligence.verifier")
+
+ATOMIC_SKILL_RULES = (
+    "Skill format rules (CRITICAL):\n"
+    "- Each skill must be ONE atomic name only.\n"
+    "- Use short standard forms: 'CI/CD' not 'CI/CD pipelines', 'Microservices' not 'microservices architecture', 'DSA' not 'Data Structures and Algorithms'.\n"
+    "- Never group multiple skills into one string.\n"
+    "- Never add qualifier words like 'pipelines', 'architecture', 'concepts', 'fundamentals'.\n"
+)
 
 
 def build_verifier_prompt(jd_text: str, extracted_json: str) -> str:
@@ -30,13 +39,18 @@ Given:
 Check if each field is correctly supported by the JD.
 
 Rules:
-- Mark verified=true only if clearly supported
+- Mark verified=true only if clearly supported by the JD text
 - If not found or uncertain -> verified=false
 - Provide a short exact quote from JD as evidence
+- For required_skills: verify=true if the JD mentions those skill areas, even if phrased differently
+- required_skills can be an empty list ([]) — this is valid when all skills are captured in required_one_of. Mark verified=true if required_skills is [] and required_one_of is populated.
+- required_one_of can be an empty list ([]) — this is valid when all skills are in required_skills. Mark verified=true if required_one_of is [] and required_skills is populated.
 - Keep output STRICT JSON
 
+{ATOMIC_SKILL_RULES}
+
 Fields to verify:
-role, required_skills, work_mode, experience_required
+{', '.join(KEY_FIELDS)}
 
 JD:
 {jd_text}
@@ -84,12 +98,20 @@ Rules:
 - Do NOT include other fields
 - Use only information from the JD
 - If not present, return null
+- Do NOT expand or add skills not in the current extracted data
+- Do NOT revert atomic skill names to verbose JD phrasing
+- Do NOT move skills from required_one_of into required_skills. If required_skills is empty because skills are in required_one_of, return: {{"required_skills": []}}
+- Do NOT add any skill that is not explicitly mentioned in the JD text.
 
-Fields to correct:{failed_fields}
+{ATOMIC_SKILL_RULES}
 
-JD:{jd_text}
+Fields to correct: {failed_fields}
 
-Current extracted data:{current_payload}
+JD:
+{jd_text}
+
+Current extracted data:
+{current_payload}
 
 Return STRICT JSON:
 {{

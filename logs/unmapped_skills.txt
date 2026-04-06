@@ -1,0 +1,197 @@
+Spring
+Embedded Linux
+RTOS
+C
+Perforce
+Surface Flinger
+Composer
+Display HAL
+DRM/KMS drivers
+Windows DWM Framework
+Linux kernel
+TTS
+STT
+OS internals
+platform security
+CodeBuild
+CodeDeploy
+CodePipeline
+CodeCommit
+EKS
+ECS
+Fargate
+Lambda
+CloudFront
+API Gateway
+CloudWatch
+Kinesis Streams
+Quarkus
+Express Js
+GraalVM
+modern front-end technologies
+CSS/SCSS
+AI/ML
+LangGraph
+Deep Learning
+NoSQL
+tts
+stt
+codebuild
+codedeploy
+codepipeline
+codecommit
+SQL/NoSQL
+RESTful APIs
+css/scss
+sql/nosql
+restful apis
+DisplayPort
+perforce
+displayport
+composer
+Full-Stack Development
+People Management
+Database
+Java Spring
+Java Spring Boot
+full stack development
+people management
+database
+java spring
+java spring boot
+Machine Learning/Deep Learning
+Gen AI tools
+REST API integration
+Cloud platforms
+machine learning/deep learning
+gen ai tools
+rest api integration
+cloud platforms
+Programming languages
+Web development
+Databases
+Version control
+Identity management
+Operating systems
+Monitoring
+Security measurement
+Security observability
+Platform security
+identity management
+operating systems
+programming languages
+Cloud-Native Application Development
+Full Stack Development
+AWS Services Management
+Cloud-Native CI/CD
+Event-Driven Architecture
+No-SQL modelling
+cloud native application development
+aws services management
+cloud native ci/cd
+event driven architecture
+Application development
+Software Development Life Cycle
+Agile methodologies
+Application Resiliency
+Security
+Modern front-end technologies
+Cloud technologies
+application development
+software development life cycle
+agile methodologies
+application resiliency
+security
+Frontend technologies
+Backend development
+SQL/NoSQL databases
+Version control systems
+Microservices architecture
+Cloud services
+nosql
+C/C++ Programming
+Display technologies
+Android Display/Graphics framework
+SW/HW debuggers
+Code revision control systems
+c/c++ programming
+display technologies
+android display/graphics framework
+sw/hw debuggers
+code revision control systems
+Angular/Vue
+Object-oriented concepts
+Design
+Relational databases
+Non-relational databases
+Unix operating system
+Application performance improvement techniques
+Caching solutions
+AI/ML algorithms
+AI/ML frameworks
+AI-powered Assistant tools
+Cloud data warehousing platforms
+CI/CD tools
+Agile development methodologies
+angular/vue
+object oriented concepts
+design
+relational databases
+non relational databases
+unix operating system
+application performance improvement techniques
+caching solutions
+Machine Learning
+NLP
+MLOps
+LLMOps
+machine learning
+deep learning
+monitoring
+security measurement
+security observability
+OS
+Cloud
+Hazelcast
+TiDB
+Delta Lake
+Containerd
+Spark Streaming
+Maxwell
+Debezium
+PySpark
+TiCDC
+Trino
+AI
+ML
+Cybersecurity
+Cloud Computing
+Play
+mlops
+llmops
+eks
+ecs
+fargate
+lambda
+cloudfront
+api gateway
+cloudwatch
+quarkus
+express js
+play
+hazelcast
+tidb
+delta lake
+containerd
+spark streaming
+maxwell
+debezium
+pyspark
+ticdc
+trino
+ai
+ml
+Cryptography
+Load-balancing
+cryptography
+load balancing

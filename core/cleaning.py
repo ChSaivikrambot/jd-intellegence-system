@@ -15,10 +15,12 @@ def normalize_whitespace(text: str) -> str:
     return " ".join(text.split()).strip()
 
 
-def clean_jd_text(jd_text: str, *, max_chars: int = 50_000) -> str:
+def clean_jd_text(jd_text: str, *, min_chars: int = 30, max_chars: int = 50_000) -> str:
     cleaned = normalize_whitespace(strip_html(jd_text))
     if not cleaned:
         raise ValueError("JD text is empty after cleaning.")
+    if len(cleaned) < min_chars:
+        raise ValueError(f"JD text too short after cleaning (min {min_chars} chars). Provide a complete job description.")
     if len(cleaned) > max_chars:
         raise ValueError(f"JD text too long after cleaning (max {max_chars} chars).")
     return cleaned

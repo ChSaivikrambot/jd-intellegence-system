@@ -1,0 +1,1494 @@
+{
+  "adobe xd": {
+    "aliases": [
+      "adobe xd",
+      "adobexd"
+    ],
+    "category": "design",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "agile": {
+    "aliases": [
+      "agile",
+      "scrum",
+      "kanban"
+    ],
+    "category": "process",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "airbyte": {
+    "aliases": [
+      "airbyte"
+    ],
+    "category": "bigdata",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "airflow": {
+    "aliases": [
+      "airflow",
+      "apache airflow"
+    ],
+    "category": "bigdata",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "android": {
+    "aliases": [
+      "android",
+      "android sdk",
+      "android studio",
+      "android display",
+      "android framework",
+      "android graphics"
+    ],
+    "category": "platform",
+    "match_type": "strict",
+    "weight": 1.0
+  },
+  "angular": {
+    "aliases": [
+      "angular",
+      "angularjs",
+      "angular js",
+      "angular 2+"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "ansible": {
+    "aliases": [
+      "ansible"
+    ],
+    "category": "devops",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "apache": {
+    "aliases": [
+      "apache",
+      "apache http",
+      "apache http server"
+    ],
+    "category": "devops",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "astro": {
+    "aliases": [
+      "astro",
+      "astro.js"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "aws": {
+    "aliases": [
+      "aws",
+      "amazon web services",
+      "amazon aws",
+      "aws cloud"
+    ],
+    "category": "cloud",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "azure": {
+    "aliases": [
+      "azure",
+      "microsoft azure",
+      "azure cloud"
+    ],
+    "category": "cloud",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "babel": {
+    "aliases": [
+      "babel"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "bootstrap": {
+    "aliases": [
+      "bootstrap"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "bun": {
+    "aliases": [
+      "bun",
+      "bun.js"
+    ],
+    "category": "runtime",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "c": {
+    "aliases": [
+      "c",
+      "c language",
+      "c programming"
+    ],
+    "category": "language",
+    "match_type": "strict",
+    "weight": 1.5
+  },
+  "c#": {
+    "aliases": [
+      "c#",
+      "csharp",
+      "c sharp",
+      ".net"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "c++": {
+    "aliases": [
+      "c++",
+      "cpp",
+      "cplusplus",
+      "c plus plus",
+      "c/c++",
+      "c/c++ programming",
+      "c and c++",
+      "c or c++"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "chrome os": {
+    "aliases": [
+      "chrome os",
+      "chromeos",
+      "chromebook"
+    ],
+    "category": "platform",
+    "match_type": "strict",
+    "weight": 1.0
+  },
+  "ci/cd": {
+    "aliases": [
+      "ci/cd",
+      "cicd",
+      "ci cd",
+      "continuous integration",
+      "continuous deployment",
+      "continuous delivery",
+      "pipeline"
+    ],
+    "category": "process",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "cmake": {
+    "aliases": [
+      "cmake"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "confluence": {
+    "aliases": [
+      "confluence"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "css": {
+    "aliases": [
+      "css",
+      "css3",
+      "css 3"
+    ],
+    "category": "markup",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "cuda": {
+    "aliases": [
+      "cuda",
+      "nvidia cuda"
+    ],
+    "category": "library",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "cypress": {
+    "aliases": [
+      "cypress"
+    ],
+    "category": "testing",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "dart": {
+    "aliases": [
+      "dart"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "databricks": {
+    "aliases": [
+      "databricks"
+    ],
+    "category": "bigdata",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "directx": {
+    "aliases": [
+      "directx",
+      "direct x"
+    ],
+    "category": "library",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "display hal": {
+    "aliases": [
+      "display hal"
+    ],
+    "category": "platform",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "django": {
+    "aliases": [
+      "django"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "docker": {
+    "aliases": [
+      "docker",
+      "docker container"
+    ],
+    "category": "devops",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "drm/kms": {
+    "aliases": [
+      "drm/kms",
+      "drm kms",
+      "drm",
+      "kms",
+      "drm/kms drivers"
+    ],
+    "category": "platform",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "dsa": {
+    "aliases": [
+      "dsa",
+      "data structures",
+      "algorithms",
+      "data structures and algorithms"
+    ],
+    "category": "concept",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "elasticsearch": {
+    "aliases": [
+      "elasticsearch",
+      "elastic search",
+      "es"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "event-driven": {
+    "aliases": [
+      "event-driven"
+    ],
+    "category": "architecture",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "express": {
+    "aliases": [
+      "express",
+      "express.js"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "faiss": {
+    "aliases": [
+      "faiss"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "fastapi": {
+    "aliases": [
+      "fastapi",
+      "fast api"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "ffmpeg": {
+    "aliases": [
+      "ffmpeg",
+      "ff mpeg"
+    ],
+    "category": "library",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "figma": {
+    "aliases": [
+      "figma"
+    ],
+    "category": "design",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "flask": {
+    "aliases": [
+      "flask"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "flutter": {
+    "aliases": [
+      "flutter",
+      "flutter sdk"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "gcp": {
+    "aliases": [
+      "gcp",
+      "google cloud",
+      "google cloud platform",
+      "google cloud services"
+    ],
+    "category": "cloud",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "generative ai": {
+    "aliases": [
+      "generative ai",
+      "genai"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "git": {
+    "aliases": [
+      "git",
+      "github",
+      "gitlab",
+      "bitbucket",
+      "source control",
+      "code revision control systems",
+      "version control systems",
+      "revision control"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "github actions": {
+    "aliases": [
+      "github actions",
+      "githubactions"
+    ],
+    "category": "devops",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "go": {
+    "aliases": [
+      "go",
+      "golang",
+      "go language"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "gradle": {
+    "aliases": [
+      "gradle"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "grafana": {
+    "aliases": [
+      "grafana"
+    ],
+    "category": "devops",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "graphql": {
+    "aliases": [
+      "graphql",
+      "graph ql"
+    ],
+    "category": "api",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "grpc": {
+    "aliases": [
+      "grpc"
+    ],
+    "category": "api",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "gstreamer": {
+    "aliases": [
+      "gstreamer"
+    ],
+    "category": "library",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "hadoop": {
+    "aliases": [
+      "hadoop",
+      "apache hadoop"
+    ],
+    "category": "bigdata",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "hdmi": {
+    "aliases": [
+      "hdmi"
+    ],
+    "category": "platform",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "html": {
+    "aliases": [
+      "html",
+      "html5",
+      "html 5"
+    ],
+    "category": "markup",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "huggingface": {
+    "aliases": [
+      "huggingface",
+      "hugging face",
+      "transformers"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "illustrator": {
+    "aliases": [
+      "illustrator",
+      "adobe illustrator"
+    ],
+    "category": "design",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "ios": {
+    "aliases": [
+      "ios",
+      "iphone os"
+    ],
+    "category": "platform",
+    "match_type": "strict",
+    "weight": 1.0
+  },
+  "java": {
+    "aliases": [
+      "java",
+      "core java",
+      "java 8",
+      "java 11",
+      "java 17",
+      "java ee",
+      "jakarta ee"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "javascript": {
+    "aliases": [
+      "javascript",
+      "js",
+      "es6",
+      "es2020",
+      "es2015",
+      "es2016",
+      "es2017",
+      "es2018",
+      "es2019"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "jenkins": {
+    "aliases": [
+      "jenkins"
+    ],
+    "category": "devops",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "jest": {
+    "aliases": [
+      "jest"
+    ],
+    "category": "testing",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "jira": {
+    "aliases": [
+      "jira"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "json": {
+    "aliases": [
+      "json"
+    ],
+    "category": "format",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "junit": {
+    "aliases": [
+      "junit",
+      "j unit"
+    ],
+    "category": "testing",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "jwt": {
+    "aliases": [
+      "jwt",
+      "json web token"
+    ],
+    "category": "security",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "kafka": {
+    "aliases": [
+      "kafka",
+      "apache kafka"
+    ],
+    "category": "messaging",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "kinesis": {
+    "aliases": [
+      "kinesis",
+      "apache kinesis",
+      "amazon kinesis"
+    ],
+    "category": "messaging",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "kotlin": {
+    "aliases": [
+      "kotlin"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "kubernetes": {
+    "aliases": [
+      "kubernetes",
+      "k8s"
+    ],
+    "category": "devops",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "langchain": {
+    "aliases": [
+      "langchain",
+      "lang chain",
+      "llm frameworks",
+      "lm frameworks"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "ldap": {
+    "aliases": [
+      "ldap"
+    ],
+    "category": "security",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "less": {
+    "aliases": [
+      "less"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "linux": {
+    "aliases": [
+      "linux",
+      "ubuntu",
+      "centos",
+      "debian",
+      "rhel",
+      "red hat",
+      "embedded linux",
+      "linux kernel",
+      "linux kernel architecture",
+      "embedded linux kernel",
+      "linux kernel development"
+    ],
+    "category": "platform",
+    "match_type": "strict",
+    "weight": 1.5
+  },
+  "llamaindex": {
+    "aliases": [
+      "llamaindex",
+      "llama index"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "llm": {
+    "aliases": [
+      "llm",
+      "large language model",
+      "large language models",
+      "llms"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "make": {
+    "aliases": [
+      "make",
+      "makefile"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "material-ui": {
+    "aliases": [
+      "material-ui",
+      "mui"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "matplotlib": {
+    "aliases": [
+      "matplotlib"
+    ],
+    "category": "data",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "maven": {
+    "aliases": [
+      "maven",
+      "apache maven"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "microservices": {
+    "aliases": [
+      "microservices",
+      "micro services",
+      "microservice"
+    ],
+    "category": "architecture",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "mipi dsi": {
+    "aliases": [
+      "mipi dsi"
+    ],
+    "category": "platform",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "mocha": {
+    "aliases": [
+      "mocha"
+    ],
+    "category": "testing",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "mongodb": {
+    "aliases": [
+      "mongodb",
+      "mongo db",
+      "mongo"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "mysql": {
+    "aliases": [
+      "mysql",
+      "my sql"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "next.js": {
+    "aliases": [
+      "next.js",
+      "next js"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "nginx": {
+    "aliases": [
+      "nginx"
+    ],
+    "category": "devops",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "node.js": {
+    "aliases": [
+      "node.js",
+      "node js",
+      "node"
+    ],
+    "category": "runtime",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "npm": {
+    "aliases": [
+      "npm",
+      "node package manager"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "numpy": {
+    "aliases": [
+      "numpy",
+      "np"
+    ],
+    "category": "data",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "oauth": {
+    "aliases": [
+      "oauth",
+      "oauth2",
+      "oauth 2.0"
+    ],
+    "category": "security",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "oop": {
+    "aliases": [
+      "oop",
+      "object oriented programming"
+    ],
+    "category": "concept",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "openai": {
+    "aliases": [
+      "openai"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "opencl": {
+    "aliases": [
+      "opencl"
+    ],
+    "category": "library",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "opencv": {
+    "aliases": [
+      "opencv",
+      "open cv"
+    ],
+    "category": "library",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "opengl": {
+    "aliases": [
+      "opengl"
+    ],
+    "category": "library",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "pandas": {
+    "aliases": [
+      "pandas",
+      "pd"
+    ],
+    "category": "data",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "photoshop": {
+    "aliases": [
+      "photoshop",
+      "adobe photoshop"
+    ],
+    "category": "design",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "php": {
+    "aliases": [
+      "php"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "pinecone": {
+    "aliases": [
+      "pinecone"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "pip": {
+    "aliases": [
+      "pip"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "pnpm": {
+    "aliases": [
+      "pnpm"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "postgresql": {
+    "aliases": [
+      "postgresql",
+      "postgres",
+      "postgre sql",
+      "pgsql"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "postman": {
+    "aliases": [
+      "postman"
+    ],
+    "category": "testing",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "powerbi": {
+    "aliases": [
+      "powerbi",
+      "power bi"
+    ],
+    "category": "data",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "prisma": {
+    "aliases": [
+      "prisma",
+      "prisma orm"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "prometheus": {
+    "aliases": [
+      "prometheus"
+    ],
+    "category": "devops",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "prompt engineering": {
+    "aliases": [
+      "prompt engineering"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "pytest": {
+    "aliases": [
+      "pytest"
+    ],
+    "category": "testing",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "python": {
+    "aliases": [
+      "python",
+      "python3",
+      "py"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "pytorch": {
+    "aliases": [
+      "pytorch",
+      "torch"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "rabbitmq": {
+    "aliases": [
+      "rabbitmq",
+      "rabbit mq"
+    ],
+    "category": "messaging",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "rag": {
+    "aliases": [
+      "rag",
+      "retrieval augmented generation"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "react": {
+    "aliases": [
+      "react",
+      "reactjs",
+      "react js",
+      "reactjsx"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "react native": {
+    "aliases": [
+      "react native",
+      "reactnative"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "redis": {
+    "aliases": [
+      "redis"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "rest api": {
+    "aliases": [
+      "rest api",
+      "restful api",
+      "rest",
+      "restful",
+      "rest apis",
+      "rest api s",
+      "restful apis",
+      "rest api integration"
+    ],
+    "category": "api",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "rollup": {
+    "aliases": [
+      "rollup"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "rtos": {
+    "aliases": [
+      "rtos",
+      "real-time operating system"
+    ],
+    "category": "platform",
+    "match_type": "strict",
+    "weight": 1.5
+  },
+  "ruby": {
+    "aliases": [
+      "ruby"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "rust": {
+    "aliases": [
+      "rust"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "sass": {
+    "aliases": [
+      "sass",
+      "scss"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "scikit-learn": {
+    "aliases": [
+      "scikit-learn",
+      "sklearn",
+      "scikitlearn"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "selenium": {
+    "aliases": [
+      "selenium"
+    ],
+    "category": "testing",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "serverless": {
+    "aliases": [
+      "serverless"
+    ],
+    "category": "architecture",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "sketch": {
+    "aliases": [
+      "sketch"
+    ],
+    "category": "design",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "snowflake": {
+    "aliases": [
+      "snowflake"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "sns": {
+    "aliases": [
+      "sns",
+      "amazon sns",
+      "simple notification service"
+    ],
+    "category": "messaging",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "spark": {
+    "aliases": [
+      "spark",
+      "apache spark"
+    ],
+    "category": "bigdata",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "spring boot": {
+    "aliases": [
+      "spring boot",
+      "springboot",
+      "spring boot framework",
+      "java spring boot",
+      "java spring spring boot",
+      "spring"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "sql": {
+    "aliases": [
+      "sql",
+      "mysql",
+      "postgres",
+      "postgresql",
+      "sqlite",
+      "mssql",
+      "oracle sql"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "sqs": {
+    "aliases": [
+      "sqs",
+      "amazon sqs",
+      "simple queue service"
+    ],
+    "category": "messaging",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "ssl": {
+    "aliases": [
+      "ssl",
+      "tls"
+    ],
+    "category": "security",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "supabase": {
+    "aliases": [
+      "supabase"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "surfaceflinger": {
+    "aliases": [
+      "surface flinger",
+      "surfaceflinger"
+    ],
+    "category": "platform",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "svelte": {
+    "aliases": [
+      "svelte"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "stt": {
+    "aliases": [
+      "stt",
+      "speech to text",
+      "speech-to-text",
+      "automatic speech recognition",
+      "asr"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "swift": {
+    "aliases": [
+      "swift"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "tts": {
+    "aliases": [
+      "tts",
+      "text to speech",
+      "text-to-speech",
+      "speech synthesis"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "system design": {
+    "aliases": [
+      "system design",
+      "distributed systems",
+      "scalable systems"
+    ],
+    "category": "concept",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "tableau": {
+    "aliases": [
+      "tableau"
+    ],
+    "category": "data",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "tailwind": {
+    "aliases": [
+      "tailwind",
+      "tailwind css",
+      "tailwindcss"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "tensorflow": {
+    "aliases": [
+      "tensorflow",
+      "tensor flow",
+      "tf"
+    ],
+    "category": "ai",
+    "match_type": "alias",
+    "weight": 2.0
+  },
+  "terraform": {
+    "aliases": [
+      "terraform"
+    ],
+    "category": "devops",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "trpc": {
+    "aliases": [
+      "trpc",
+      "t rpc"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "typescript": {
+    "aliases": [
+      "typescript",
+      "ts"
+    ],
+    "category": "language",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "unity": {
+    "aliases": [
+      "unity",
+      "unity3d"
+    ],
+    "category": "platform",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "unix": {
+    "aliases": [
+      "unix",
+      "linux unix",
+      "unix-like",
+      "unix operating system",
+      "unix os",
+      "unix system"
+    ],
+    "category": "platform",
+    "match_type": "strict",
+    "weight": 1.5
+  },
+  "unreal engine": {
+    "aliases": [
+      "unreal engine",
+      "unreal",
+      "unrealengine"
+    ],
+    "category": "platform",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "vercel": {
+    "aliases": [
+      "vercel"
+    ],
+    "category": "cloud",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "vite": {
+    "aliases": [
+      "vite",
+      "vitejs"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "vue": {
+    "aliases": [
+      "vue",
+      "vuejs",
+      "vue js"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "vulkan": {
+    "aliases": [
+      "vulkan"
+    ],
+    "category": "library",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "weaviate": {
+    "aliases": [
+      "weaviate"
+    ],
+    "category": "database",
+    "match_type": "alias",
+    "weight": 1.5
+  },
+  "webpack": {
+    "aliases": [
+      "webpack"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "windows": {
+    "aliases": [
+      "windows",
+      "windows os",
+      "windows 10",
+      "windows 11"
+    ],
+    "category": "platform",
+    "match_type": "strict",
+    "weight": 0.5
+  },
+  "windows dwm": {
+    "aliases": [
+      "windows dwm",
+      "dwm",
+      "windows dwm framework"
+    ],
+    "category": "platform",
+    "match_type": "alias",
+    "weight": 1.0
+  },
+  "xml": {
+    "aliases": [
+      "xml"
+    ],
+    "category": "format",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "yaml": {
+    "aliases": [
+      "yaml",
+      "yml"
+    ],
+    "category": "format",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "yarn": {
+    "aliases": [
+      "yarn"
+    ],
+    "category": "tool",
+    "match_type": "alias",
+    "weight": 0.5
+  },
+  "zustand": {
+    "aliases": [
+      "zustand"
+    ],
+    "category": "framework",
+    "match_type": "alias",
+    "weight": 1.0
+  }
+}

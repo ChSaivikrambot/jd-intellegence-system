@@ -1,0 +1,99 @@
+Generative AI Engineer 
+Hyderabad, Telangana, India · Reposted 1 month ago · Over 100 people clicked apply
+Promoted by hirer · Responses managed off LinkedIn
+
+
+On-site
+
+Internship
+
+Apply
+
+Save
+Save Generative AI Engineer  at techolution
+Generative AI Engineer
+techolution · Hyderabad, Telangana, India (On-site)
+
+Apply
+
+Save
+Save Generative AI Engineer  at techolution
+Show more options
+How your profile and resume fit this job
+Get AI-powered advice on this job and more exclusive features with Premium. Try Premium for ₹0
+
+
+
+Show match details
+
+Tailor my resume
+
+Help me stand out
+
+Meet the hiring team
+Aadish Jain
+Aadish Jain  
+ 3rd
+Demystifying Recruiting @Techolution | Scaling Engineering Teams Across Levels for India, APAC and MENA
+Job poster
+
+Message
+About the job
+Shape the Future of Enterprise Intelligence
+
+
+
+Turn potential into production. We’re searching for a Gen AI Intern ready to move beyond experimentation and build the intelligent systems that power real businesses. If you’re passionate about applying Large Language Models, RAG architectures, and multimodal AI to solve tangible enterprise challenges, your foundation starts here. Join us at the intersection of research and reality, where your code doesn't just run, it redefines what's possible.
+
+
+Role: Gen AI Intern
+Location: Hyderabad, India
+Employment Type: Full-Time Internship
+Experience: Prior internship experience in AI/ML application development is required. 
+
+
+
+What You'll Do:
+
+
+
+Develop and enhance AI models and systems using Python and core Machine Learning/Deep Learning principles.
+Build real-world Gen AI applications, including solutions involving Text-to-Speech (TTS), Speech-to-Text (STT), and seamless REST API integrations.
+Engineer prompts and implement LLM frameworks and Retrieval-Augmented Generation (RAG)systems to create dynamic, intelligent applications.
+Deploy scalable AI solutions using Docker, cloud services (GCP/AWS), Git, and modern MLOps/LLMOps practices.
+Collaborate with cross-functional teams to transform concepts into functional, production-ready AI products.
+
+
+What You Bring (Core Requirements)
+
+
+
+Proficiency in Python & ML/DL Fundamentals: Strong coding skills and a solid grasp of machine learning/deep learning concepts are essential.
+Learning Agility & Proactive Mindset: A rapid learner who actively seeks feedback, adapts quickly, and owns their growth and contributions.
+Hands-on experience with Gen AI tools such as TTS/STT systems, REST API integration, or chatbot development.
+Exposure to Prompt Engineering, LLM frameworks (e.g., LangChain), or RAG systems.
+Project or Internship Experience building applied AI/ML solutions (e.g., NLP projects, multimodal applications).
+Familiarity with deployment tools like Docker, Git, and cloud platforms (GCP or AWS).
+Collaboration & Communication (C.A.R.E.): Must demonstrate Collaboration, Accountability, a Results-driven approach, and Empathy. The ability to explain complex ideas clearly is critical.
+
+
+Why Techolution?
+
+
+
+You will join an award-winning AI innovation partner trusted by 300+ global clients, including Fortune 500 leaders. From ideation to ROI, we deliver custom AI solutions with a guaranteed-price model that minimizes risk and maximizes real-world impact. Here, you’ll work alongside experts, contribute to live projects, and help shape the future of Human-AI partnership.
+
+
+How to Apply
+
+Ready to build the future with AI? Submit your resumes and any relevant project portfolios or GitHub profiles with us.
+
+
+Visit: www.techolution.com
+
+
+
+Techolution is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all.
+
+
+About the company
